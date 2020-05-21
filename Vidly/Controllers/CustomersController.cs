@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -36,7 +37,7 @@ namespace Vidly.Controllers
         
         private IEnumerable<Customer> GetCustomers()
         {
-            return _context.Customers.ToList();
+            return _context.Customers.Include(c => c.MembershipType).ToList();
         }
 
     }
