@@ -134,8 +134,22 @@
         <Compile Include="Migrations\202005211337108_InitialMigration.Designer.cs">
           <DependentUpon>202005211337108_InitialMigration.cs</DependentUpon>
         </Compile>
+        <Compile Include="Migrations\202005211342398_AddCustomer.cs" />
+        <Compile Include="Migrations\202005211342398_AddCustomer.Designer.cs">
+          <DependentUpon>202005211342398_AddCustomer.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Migrations\202005211347388_AddMembershipType.cs" />
+        <Compile Include="Migrations\202005211347388_AddMembershipType.Designer.cs">
+          <DependentUpon>202005211347388_AddMembershipType.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Migrations\202005211350132_PopulateMembershipTypes.cs" />
+        <Compile Include="Migrations\202005211350132_PopulateMembershipTypes.Designer.cs">
+          <DependentUpon>202005211350132_PopulateMembershipTypes.cs</DependentUpon>
+        </Compile>
         <Compile Include="Migrations\Configuration.cs" />
         <Compile Include="Models\ApplicationDbContext.cs" />
+        <Compile Include="Models\Customer.cs" />
+        <Compile Include="Models\MembershipType.cs" />
         <Compile Include="Models\Movie.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
@@ -196,6 +210,15 @@
     <ItemGroup>
       <EmbeddedResource Include="Migrations\202005211337108_InitialMigration.resx">
         <DependentUpon>202005211337108_InitialMigration.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202005211342398_AddCustomer.resx">
+        <DependentUpon>202005211342398_AddCustomer.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202005211347388_AddMembershipType.resx">
+        <DependentUpon>202005211347388_AddMembershipType.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202005211350132_PopulateMembershipTypes.resx">
+        <DependentUpon>202005211350132_PopulateMembershipTypes.cs</DependentUpon>
       </EmbeddedResource>
     </ItemGroup>
     <PropertyGroup>
