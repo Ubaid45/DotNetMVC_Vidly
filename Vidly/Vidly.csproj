@@ -184,9 +184,13 @@
         <Compile Include="Migrations\202005211916268_Genre.Designer.cs">
           <DependentUpon>202005211916268_Genre.cs</DependentUpon>
         </Compile>
-        <Compile Include="Migrations\202005222249423_AddedMembership.cs" />
-        <Compile Include="Migrations\202005222249423_AddedMembership.Designer.cs">
-          <DependentUpon>202005222249423_AddedMembership.cs</DependentUpon>
+        <Compile Include="Migrations\202005222320379_AddASPRoles.cs" />
+        <Compile Include="Migrations\202005222320379_AddASPRoles.Designer.cs">
+          <DependentUpon>202005222320379_AddASPRoles.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Migrations\202005222325524_SeedUsers.cs" />
+        <Compile Include="Migrations\202005222325524_SeedUsers.Designer.cs">
+          <DependentUpon>202005222325524_SeedUsers.cs</DependentUpon>
         </Compile>
         <Compile Include="Migrations\Configuration.cs" />
         <Compile Include="Models\ApplicationDbContext.cs" />
@@ -519,8 +523,11 @@
       <EmbeddedResource Include="Migrations\202005211916268_Genre.resx">
         <DependentUpon>202005211916268_Genre.cs</DependentUpon>
       </EmbeddedResource>
-      <EmbeddedResource Include="Migrations\202005222249423_AddedMembership.resx">
-        <DependentUpon>202005222249423_AddedMembership.cs</DependentUpon>
+      <EmbeddedResource Include="Migrations\202005222320379_AddASPRoles.resx">
+        <DependentUpon>202005222320379_AddASPRoles.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202005222325524_SeedUsers.resx">
+        <DependentUpon>202005222325524_SeedUsers.cs</DependentUpon>
       </EmbeddedResource>
     </ItemGroup>
     <PropertyGroup>
