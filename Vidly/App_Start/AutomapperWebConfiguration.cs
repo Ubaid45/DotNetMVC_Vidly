@@ -1,4 +1,5 @@
 using AutoMapper;
+using Vidly_AppStart;
 
 namespace Vidly
 {

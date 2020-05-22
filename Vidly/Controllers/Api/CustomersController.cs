@@ -27,7 +27,7 @@ namespace Vidly.Controllers.Api
 
             if (!String.IsNullOrWhiteSpace(query))
                 customersQuery = customersQuery.Where(c => c.Name.Contains(query));
-            */
+*/
             var customerDtos = _context.Customers
                 .ToList()
                 .Select(_mapper.Map<Customer, CustomerDto>);
