@@ -1,5 +1,4 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
 }
 
@@ -31,4 +30,15 @@ label.error {
 .input-validation-error,
 input.error {
     border: 2px solid red;
+}
+.modal-backdrop
+{
+    opacity:0.5 !important;
+}
+.modal{
+    overflow: unset !important;
+    top: 35px;
+}
+.fade:not(.show){
+    opacity: 1;
 }
