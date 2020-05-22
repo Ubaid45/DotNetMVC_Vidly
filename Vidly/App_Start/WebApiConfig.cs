@@ -11,6 +11,7 @@ namespace Vidly
     {
         public static void Register(HttpConfiguration config)
         {
+            // Enabled camelCasing so that JS can process it with all readability
             var settings = config.Formatters.JsonFormatter.SerializerSettings;
             settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             settings.Formatting = Formatting.Indented;
