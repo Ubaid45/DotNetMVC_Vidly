@@ -24,6 +24,7 @@
     <thead>
         <tr>
             <th>Customer</th>
+            <th>Membership Type</th>
             <th>Delete</th>
         </tr>
     </thead>
@@ -45,6 +46,9 @@
                         render: function(data, type, customer) {
                             return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>";
                         }
+                    },
+                    {
+                        data: "membershipType.name"
                     },
                     {
                         data: "id",
