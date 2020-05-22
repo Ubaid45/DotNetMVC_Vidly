@@ -2,8 +2,9 @@ using AutoMapper;
 using Vidly.Dtos;
 using Vidly.Models;
 
-namespace Vidly.App_Start
+namespace Vidly
 {
+    //Profile number one saved in Web layer
     public class MappingProfile : Profile
     {
         public MappingProfile()
@@ -13,6 +14,8 @@ namespace Vidly.App_Start
             
             // Dto to Domain
             CreateMap<CustomerDto, Customer>();
+            /*etc...*/
         }
     }
+
 }

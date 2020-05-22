@@ -5,6 +5,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Http;
+using AutoMapper;
+using Vidly.Dtos;
 using Vidly.Models;
 
 namespace Vidly.Controllers.Api
@@ -12,45 +14,60 @@ namespace Vidly.Controllers.Api
     public class CustomersController : ApiController
     {
         private ApplicationDbContext _context;
+        private IMapper _mapper;
 
         public CustomersController()
         {
             _context = new ApplicationDbContext();
+            _mapper = AutomapperWebConfiguration.Configure().CreateMapper();
+        }
+        
+        // GET /api/customers
+        public IHttpActionResult GetCustomers(string query = null)
+        {
+            /*var customersQuery = _context.Customers
+                .Include(c => c.MembershipType);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                customersQuery = customersQuery.Where(c => c.Name.Contains(query));
+            */
+            var customerDtos = _context.Customers
+                .ToList()
+                .Select(_mapper.Map<Customer, CustomerDto>);
+            
+            return Ok(customerDtos);    
         }
 
-        // GET /api/customers
-        public IEnumerable<Customer> GetCustomers(string query = null)
-        {
-            return _context.Customers.ToList();    
-        }
 
         // GET /api/customers/1
-        public Customer GetCustomer(int id)
+        public CustomerDto GetCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
             if (customer == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            return customer;
+            return _mapper.Map<Customer, CustomerDto>(customer);
         }
         
         // POST /api/customers
         [HttpPost]
-        public Customer CreateCustomer(Customer customer)
+        public CustomerDto CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
+            var customer = _mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customers.Add(customer);
             _context.SaveChanges();
 
-            return customer;
+            customerDto.Id = customer.Id;
+            return customerDto;
         }
         
         // PUT /api/customers/1
         [HttpPut]
-        public void UpdateCustomer(int id, Customer customer)
+        public void UpdateCustomer(int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -60,13 +77,9 @@ namespace Vidly.Controllers.Api
             if (customerInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            customerInDb.Name = customer.Name;
-            customerInDb.Birthdate = customer.Birthdate;
-            customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
-            customerInDb.MembershipTypeId = customer.MembershipTypeId;
+            _mapper.Map(customerDto, customerInDb);
 
             _context.SaveChanges();
-
         }
         
         // DELETE /api/customers/1
