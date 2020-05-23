@@ -282,6 +282,10 @@
         <Compile Include="Migrations\202005230209387_UpdateDbContext.Designer.cs">
           <DependentUpon>202005230209387_UpdateDbContext.cs</DependentUpon>
         </Compile>
+        <Compile Include="Migrations\202005231436596_SeedUsers1.cs" />
+        <Compile Include="Migrations\202005231436596_SeedUsers1.Designer.cs">
+          <DependentUpon>202005231436596_SeedUsers1.cs</DependentUpon>
+        </Compile>
         <Compile Include="Migrations\Configuration.cs" />
         <Compile Include="Models\AccountViewModel.cs" />
         <Compile Include="Models\ApplicationDbContext.cs" />
@@ -645,6 +649,9 @@
       </EmbeddedResource>
       <EmbeddedResource Include="Migrations\202005230209387_UpdateDbContext.resx">
         <DependentUpon>202005230209387_UpdateDbContext.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202005231436596_SeedUsers1.resx">
+        <DependentUpon>202005231436596_SeedUsers1.cs</DependentUpon>
       </EmbeddedResource>
     </ItemGroup>
     <PropertyGroup>
