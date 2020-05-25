@@ -297,6 +297,10 @@
     <Compile Include="Migrations\202005232016317_UpdateProfile.designer.cs">
       <DependentUpon>202005232016317_UpdateProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005252115136_AddRentals.cs" />
+    <Compile Include="Migrations\202005252115136_AddRentals.designer.cs">
+      <DependentUpon>202005252115136_AddRentals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModel.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -308,6 +312,7 @@
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MagicStringsRemover.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
@@ -662,6 +667,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005232016317_UpdateProfile.resx">
       <DependentUpon>202005232016317_UpdateProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005252115136_AddRentals.resx">
+      <DependentUpon>202005252115136_AddRentals.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

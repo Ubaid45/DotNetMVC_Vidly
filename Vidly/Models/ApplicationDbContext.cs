@@ -1,8 +1,6 @@
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Vidly.Models
 {
@@ -12,8 +10,9 @@ namespace Vidly.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<MembershipType> MembershipTypes { get; set; }
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<Rental> Rentals { get; set; }
         // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-      
+
         public ApplicationDbContext()
             : base("DefaultConnection")
         {
@@ -23,7 +22,7 @@ namespace Vidly.Models
         {
             return new ApplicationDbContext();
         }
-        
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
