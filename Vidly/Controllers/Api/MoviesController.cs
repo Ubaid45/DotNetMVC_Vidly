@@ -1,15 +1,15 @@
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
-using AutoMapper;
 using Vidly.Dtos;
 using Vidly.Models;
 
 namespace Vidly.Controllers.Api
 {
-    public class MoviesController :  ApiController
+    public class MoviesController : ApiController
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
@@ -23,7 +23,8 @@ namespace Vidly.Controllers.Api
         public IEnumerable<MovieDto> GetMovies(string query = null)
         {
             var moviesQuery = _context.Movies
-                .Include(m => m.Genre);
+                .Include(m => m.Genre)
+                .Where(m => m.NumberAvailable > 0);
 
             if (!String.IsNullOrWhiteSpace(query))
                 moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
