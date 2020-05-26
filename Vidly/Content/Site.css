@@ -33,4 +33,6 @@ input.error {
     border: 2px solid red;
 }
 
-#52656B
+.input-group-addon, .input-group-btn{
+    width: unset;
+}
