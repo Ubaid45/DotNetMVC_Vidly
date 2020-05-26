@@ -32,7 +32,3 @@ label.error {
 input.error {
     border: 2px solid red;
 }
-
-.input-group-addon, .input-group-btn{
-    width: unset;
-}
